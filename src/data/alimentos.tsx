@@ -1,92 +1,122 @@
 export const alimentos = [
     {
         id: 1,
-        nombre: "Manzana",
-        categoria: "Fruta",
-        calorias: 52,
-        proteinas: 0.3,
-        grasas: 0.2,
-        carbohidratos: 14
+        nombre: "Ensalada de Pollo",
+        categoria: "Ensalada",
+        calorias: 250,
+        proteinas: 30,
+        grasas: 8,
+        carbohidratos: 10,
+        ingredientes: ["Pollo", "Lechuga", "Tomate", "Aceite de oliva", "Sal"]
     },
     {
         id: 2,
-        nombre: "Pollo",
-        categoria: "Carne",
-        calorias: 165,
-        proteinas: 31,
-        grasas: 3.6,
-        carbohidratos: 0
+        nombre: "Arroz con Leche",
+        categoria: "Postre",
+        calorias: 180,
+        proteinas: 5,
+        grasas: 3,
+        carbohidratos: 35,
+        ingredientes: ["Arroz", "Leche", "Azúcar", "Canela", "Vainilla"]
     },
     {
         id: 3,
-        nombre: "Arroz",
-        categoria: "Cereal",
-        calorias: 130,
-        proteinas: 2.7,
-        grasas: 0.3,
-        carbohidratos: 28
+        nombre: "Salmón al Horno",
+        categoria: "Plato Principal",
+        calorias: 320,
+        proteinas: 35,
+        grasas: 18,
+        carbohidratos: 2,
+        ingredientes: ["Salmón", "Limón", "Ajo", "Perejil", "Aceite de oliva"]
     },
     {
         id: 4,
-        nombre: "Leche",
-        categoria: "Lácteo",
-        calorias: 42,
-        proteinas: 3.4,
-        grasas: 1,
-        carbohidratos: 5
+        nombre: "Tortilla de Espinaca",
+        categoria: "Desayuno",
+        calorias: 210,
+        proteinas: 14,
+        grasas: 12,
+        carbohidratos: 10,
+        ingredientes: ["Huevo", "Espinaca", "Cebolla", "Sal", "Pimienta"]
     },
     {
         id: 5,
-        nombre: "Salmón",
-        categoria: "Pescado",
-        calorias: 208,
-        proteinas: 20,
-        grasas: 13,
-        carbohidratos: 0
+        nombre: "Panqueques de Almendras",
+        categoria: "Desayuno",
+        calorias: 290,
+        proteinas: 10,
+        grasas: 20,
+        carbohidratos: 25,
+        ingredientes: ["Harina de almendras", "Leche", "Huevo", "Miel", "Polvo de hornear"]
     },
     {
         id: 6,
-        nombre: "Huevo",
-        categoria: "Proteína",
-        calorias: 155,
-        proteinas: 13,
-        grasas: 11,
-        carbohidratos: 1.1
+        nombre: "Puré de Papa",
+        categoria: "Plato principal",
+        calorias: 150,
+        proteinas: 3,
+        grasas: 5,
+        carbohidratos: 25,
+        ingredientes: ["Papa", "Leche", "Mantequilla", "Sal", "Pimienta"]
     },
     {
         id: 7,
-        nombre: "Papa",
-        categoria: "Tubérculo",
-        calorias: 77,
-        proteinas: 2,
-        grasas: 0.1,
-        carbohidratos: 17
+        nombre: "Sopa de Verduras",
+        categoria: "Sopa",
+        calorias: 90,
+        proteinas: 4,
+        grasas: 2,
+        carbohidratos: 15,
+        ingredientes: ["Zanahoria", "Papa", "Cebolla", "Apio", "Caldo de verduras"]
     },
     {
         id: 8,
-        nombre: "Almendras",
-        categoria: "Frutos secos",
-        calorias: 579,
-        proteinas: 21,
-        grasas: 50,
-        carbohidratos: 22
+        nombre: "Huevo Revueltos con Pan Integral",
+        categoria: "Desayuno",
+        calorias: 320,
+        proteinas: 20,
+        grasas: 14,
+        carbohidratos: 35,
+        ingredientes: ["Huevo", "Pan integral", "Leche", "Sal", "Aceite"]
     },
     {
         id: 9,
-        nombre: "Espinaca",
-        categoria: "Verdura",
-        calorias: 23,
-        proteinas: 2.9,
-        grasas: 0.4,
-        carbohidratos: 3.6
+        nombre: "Batido de Frutas",
+        categoria: "Desayuno",
+        calorias: 180,
+        proteinas: 4,
+        grasas: 1,
+        carbohidratos: 40,
+        ingredientes: ["Banana", "Fresas", "Leche", "Miel", "Yogur"]
     },
     {
         id: 10,
-        nombre: "Pan integral",
-        categoria: "Panadería",
-        calorias: 247,
-        proteinas: 8.4,
-        grasas: 4.2,
-        carbohidratos: 41
+        nombre: "Tarta de Manzana",
+        categoria: "Postre",
+        calorias: 280,
+        proteinas: 3,
+        grasas: 12,
+        carbohidratos: 45,
+        ingredientes: ["Manzana", "Harina", "Azúcar", "Mantequilla", "Canela"]
+    },
+    {
+        id: 11,
+        nombre: "Pasta con Salsa de Tomate",
+        categoria: "Plato Principal",
+        calorias: 350,
+        proteinas: 12,
+        grasas: 6,
+        carbohidratos: 65,
+        ingredientes: ["Pasta", "Tomate", "Ajo", "Aceite de oliva", "Queso rallado"]
+    },
+    {
+        id: 12,
+        nombre: "Galletas de Avena",
+        categoria: "Postre",
+        calorias: 200,
+        proteinas: 5,
+        grasas: 8,
+        carbohidratos: 30,
+        ingredientes: ["Avena", "Harina", "Miel", "Mantequilla", "Canela"]
     }
 ];

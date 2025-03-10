@@ -1,53 +1,113 @@
 import { Link } from "react-router-dom";
 import { alimentos } from "../data/alimentos";
+import { useState } from "react";
 
 const CreaTuDieta = () => {
+  const [filterFood, setFilterFood] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage = 12; // Número de elementos por página
+
+  const changeFilter = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setFilterFood(event.target.value);
+  };
+
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filterRecetas = alimentos
+    .filter((alimento) => alimento.nombre.toLowerCase().includes(searchTerm.toLowerCase()))
+    .filter((alimento) => (filterFood ? alimento.categoria === filterFood : true));
+
+  const indexOfLastRecipe = currentPage * itemsPerPage; // Último índice de la página actual
+  const indexOfFirstRecipe = indexOfLastRecipe - itemsPerPage; // Primer índice de la página actual
+  const currentRecipes = filterRecetas.slice(indexOfFirstRecipe, indexOfLastRecipe); // Recetas de la página actual
+
+  const totalPages = Math.ceil(filterRecetas.length / itemsPerPage); // Total de páginas
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1); // Incrementa la página
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1); // Decrementa la página
+    }
+  };
+
   return (
     <div>
-      <h1>Crea tu dieta</h1>
+      <h1 className="food__title">Recetas</h1>
+
+      <div className="food__filter">
+        <input
+          type="text"
+          className="food__input"
+          placeholder="Buscar receta..."
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+        <select className="food__select" value={filterFood} onChange={changeFilter}>
+          <option value="">Todas las recetas</option>
+          <option value="Ensalada">Ensalada</option>
+          <option value="Postre">Postre</option>
+          <option value="Desayuno">Desayuno</option>
+          <option value="Sopa">Sopa</option>
+        </select>
+      </div>
 
       <section className="food__section">
-        {
-          alimentos.map(alimento => (
-            <article key={alimento.id} className="food__item">
+        {currentRecipes.map((alimentos) => (
+          <article key={alimentos.id} className="food__item">
+            <img src={"img/" + alimentos.id + ".png"} alt={alimentos.nombre} className="food__img" />
+            <span className="food__category">{alimentos.categoria}</span>
+            <h4 className="food__name">{alimentos.nombre}</h4>
 
-              <img src={"img/" + alimento.id + ".png"} alt={alimento.nombre} className="food__img" />
-
-
-              <span className="food__category">{alimento.categoria}</span>
-              <h4 className="food__name">{alimento.nombre}</h4>
-
-              <div className="food__stats">
-                <div className="food__metrics">
-                  <p className="food__text"> Calorias </p>
-                  <div className="food__metric">{alimento.calorias} </div>
-                </div>
-                <div className="food__metrics">
-                  <p className="food__text"> Proteinas </p>
-                  <div className="food__metric">{alimento.proteinas} </div>
-                </div>
-                <div className="food__metrics">
-                  <p className="food__text"> Grasas </p>
-                  <div className="food__metric">{alimento.grasas} </div>
-                </div>
-                <div className="food__metrics">
-                  <p className="food__text"> Carbohidratos </p>
-                  <div className="food__metric">{alimento.carbohidratos} </div>
-                </div>
+            <div className="food__stats">
+              <div className="food__metrics">
+                <p className="food__text"> Calorias </p>
+                <div className="food__metric">{alimentos.calorias}</div>
               </div>
+              <div className="food__metrics">
+                <p className="food__text"> Proteinas </p>
+                <div className="food__metric">{alimentos.proteinas}</div>
+              </div>
+              <div className="food__metrics">
+                <p className="food__text"> Grasas </p>
+                <div className="food__metric">{alimentos.grasas}</div>
+              </div>
+              <div className="food__metrics">
+                <p className="food__text"> Carbohidratos </p>
+                <div className="food__metric">{alimentos.carbohidratos}</div>
+              </div>
+            </div>
 
-              <div className="food__buttons">
-                <Link to={alimento.nombre}>
+            <div className="food__buttons">
+              <Link to={alimentos.nombre}>
                 <button className="button__viewMore food__button">Detalles</button>
-                </Link>
-                <button className="button__addToDiet food__button">Añadir </button>
-              </div>
-            </article>
-          ))
-        }
+              </Link>
+              <button className="button__addToDiet food__button">Añadir</button>
+            </div>
+          </article>
+        ))}
       </section>
+
+      <div className="food__pagination">
+        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+          Anterior
+        </button>
+        <span>
+          Página {currentPage} de {totalPages}
+        </span>
+        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+          Siguiente
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default CreaTuDieta;
