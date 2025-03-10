@@ -1,6 +1,23 @@
+:root{
+    --primary-color: #2e4c21;
+    --secundary-color: #dde7e1; 
+    --grey: #D5E6CF; 
+    --black: #333;
+    --shadow: 2px 4px 6px rgba(0,0, 0, 0.1); 
+    --border-radius: 16px; 
+    --white: #eeeded;
+}
+
+
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--secundary-color);
+    font-family: 'Roboto', sans-serif;
 }
 
 .layout {
@@ -10,7 +27,7 @@
 
 .header{
     height: 12vh;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--black);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -31,7 +48,7 @@
 
 
 .header__link{
-    color: black;
+    color: var(--black);
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -39,11 +56,11 @@
 
 
 .header__link:hover{
-    color: orangered;
+    color: var(--primary-color);
 }
 
 .header__linkA{
-    color: orangered;
+    color: var(--primary-color);
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -60,7 +77,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid black;
+    border-top: 1px solid var(--black);
 }
 .footer__text{
     text-align: center;
@@ -91,13 +108,26 @@
     justify-content: center;
 }
 
+.food__input{
+    padding: 10px 20px;
+    box-shadow: var(--shadow);
+    
+}
+
+.food__select{
+    padding: 10px 20px;
+    box-shadow: var(--shadow);
+    border-left: none;
+
+}
+
 
 .food__section{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 30px;
     flex-wrap: wrap;
     padding: 40px 0px;
 }
@@ -105,34 +135,39 @@
 .food__item{
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 30px;
     align-items: center;
     justify-self: center;
-    width: 300px;
-    height: 360px;
-    border: 1px solid black; 
-    border-radius: 15px;
+    width: 330px;
+    height: 400px;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
 }
 
 
 .food__img{
-    width: 60%;
+    width: 160px;
     height: 160px;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
 }
 
 .food__category{
     margin-top: 10px;
     font-size: 20px;
-    padding: 2px 8px;
-    border-radius: 20px;
-    border: 1px solid black;
-    color: orangered;
+    padding: 4px 12px;
+    color: var(--primary-color);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--primary-color);
 }
 
 .food__name{
     margin-top: 10px;
     font-size: 22px;
     font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
 }
 
 .food__stats{
@@ -141,7 +176,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 18px;
+    gap: 30px;
 }
 
 .food__metrics{
@@ -159,7 +194,7 @@
 
 .food__metric{
     font-size: 22px;
-    color: orangered;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
@@ -176,7 +211,7 @@
 .food__button{
     width: 100px;
     padding: 8px 14px; 
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     cursor: pointer;
     color: white;
     border: none;
@@ -187,7 +222,7 @@
 }
 
 .button__viewMore{
-    background-color: orangered;
+    background-color: var(--primary-color);
 }
 
 .button__addToDiet{

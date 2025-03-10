@@ -30,7 +30,7 @@ const Alimento = () => {
 
     return (
         <div>
-            <img  src={`/img/${alimento.id}.png`} alt={alimento.nombre} />
+            <img  src={`/img/${alimento.id}.jpg`} alt={alimento.nombre} />
             <h3>Receta: {alimento.nombre}</h3>
             <p>Categoria: {alimento.categoria}</p>
             <p>Proteinas: {alimento.proteinas}</p>

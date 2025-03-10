@@ -62,7 +62,7 @@ const CreaTuDieta = () => {
       <section className="food__section">
         {currentRecipes.map((alimentos) => (
           <article key={alimentos.id} className="food__item">
-            <img src={"img/" + alimentos.id + ".png"} alt={alimentos.nombre} className="food__img" />
+            <img src={"img/" + alimentos.id + ".jpg"} alt={alimentos.nombre} className="food__img" />
             <span className="food__category">{alimentos.categoria}</span>
             <h4 className="food__name">{alimentos.nombre}</h4>
 
@@ -78,10 +78,6 @@ const CreaTuDieta = () => {
               <div className="food__metrics">
                 <p className="food__text"> Grasas </p>
                 <div className="food__metric">{alimentos.grasas}</div>
-              </div>
-              <div className="food__metrics">
-                <p className="food__text"> Carbohidratos </p>
-                <div className="food__metric">{alimentos.carbohidratos}</div>
               </div>
             </div>
 

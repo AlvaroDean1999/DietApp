@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import Inicio from "../components/Inicio";
-import CreaTuDieta from "../components/Crea-Tu-Dieta";
+import CreaTuDieta from "../components/Crea-Tu-Dieta.tsx";
 import Blog from "../components/Blog";
 import Contacto from "../components/Contacto";
 import HeaderNav from "../components/laoyout/HeaderNav";

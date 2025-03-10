@@ -71,7 +71,7 @@ export const alimentos = [
     },
     {
         id: 8,
-        nombre: "Huevo Revueltos con Pan Integral",
+        nombre: "Huevo Revueltos",
         categoria: "Desayuno",
         calorias: 320,
         proteinas: 20,
