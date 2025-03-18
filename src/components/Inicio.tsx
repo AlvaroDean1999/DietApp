@@ -1,24 +1,40 @@
 const Inicio = () => {
   return (
     <div className="home">
-      <h1 className="home__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis illum consequuntur earum,
-         beatae consectetur minus dignissimos vel libero obcaecati tempora delectus saepe minima,
-          nulla qui quis, sapiente rem totam doloremque!</h1>
+      <section className="home__landing">
+        <div className="homeLanding__left">
+          <h1 className="homeLanding__title"> Con <span> TuDieta </span> crea tu propia rutina de alimentación </h1>
+          <h3 className="homeLanding__subtitle">Descubre las mejores recetas y crea tu propia deta completamente adaptada a ti </h3>
+          <div className="homeLanding__buttons">
+              <a href="" className="homeLanding__button">Visita nuesto blog</a>
+              <a href="" className="homeLanding__button">Descubre nuestras recetas</a>
+          </div>
+        </div>
+        <div className="homeLanding__right">
+            <img src="" alt="" className="homeLanding__img"/>
+        </div>
+      </section>
 
-      <h2 className="home__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam possimus sapiente 
-        optio sed ipsum, dicta saepe non dolorum, minus aliquid et voluptatem vel tempora, perspiciatis 
-        accusamus debitis doloremque eum! Nostrum?</h2>
-
-
-      <section className="home__diets">
-        <h2 className="diets__title">Algunos de mis proyectos</h2>
-        <p className="diets__subtitle"> Alugnos de mis proyectos</p>
-
-        <div className="diets__examples">
-
+      <section className="home__stats">
+        <div className="homeStats__item">
+          <img src="" alt="" className="homeItem__img" />
+          <h3 className="homeItem__title"> Personaliza </h3>
+          <p className="homeItem__text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi tempore quo non.</p>
         </div>
 
+        <div className="homeStats__item">
+          <img src="" alt="" className="homeItem__img" />
+          <h3 className="homeItem__title"> Descubre </h3>
+          <p className="homeItem__text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi tempore quo non.</p>
+        </div>
+
+        <div className="homeStats__item">
+          <img src="" alt="" className="homeItem__img" />
+          <h3 className="homeItem__title"> Personaliza </h3>
+          <p className="homeItem__text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi tempore quo non.</p>
+        </div>
       </section>
+
     </div>
   )
 }

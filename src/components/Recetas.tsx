@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { alimentos } from "../data/alimentos";
 import { useState } from "react";
 
-const CreaTuDieta = () => {
+const Recetas = () => {
   const [filterFood, setFilterFood] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -106,4 +106,4 @@ const CreaTuDieta = () => {
   );
 };
 
-export default CreaTuDieta;
+export default Recetas;

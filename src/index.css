@@ -1,5 +1,6 @@
 :root{
     --primary-color: #2e4c21;
+    --secundary-green: #4bc318; 
     --secundary-color: #dde7e1; 
     --grey: #D5E6CF; 
     --black: #333;
@@ -60,7 +61,7 @@ body{
 }
 
 .header__linkA{
-    color: var(--primary-color);
+    color: var(--secundary-green); 
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -138,7 +139,7 @@ body{
     padding: 30px;
     align-items: center;
     justify-self: center;
-    width: 330px;
+    width: 290px;
     height: 400px;
     box-shadow: var(--shadow);
     border-radius: var(--border-radius);
@@ -153,18 +154,20 @@ body{
     border-radius: var(--border-radius);
 }
 
+.food__img:hover{
+    transform: scale(1.02);
+}
+
 .food__category{
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 1rem; 
     padding: 4px 12px;
     color: var(--primary-color);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--primary-color);
 }
 
 .food__name{
     margin-top: 10px;
-    font-size: 22px;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--primary-color);
     text-align: center;
@@ -185,6 +188,7 @@ body{
     align-items: center;
     justify-content: center;
     gap: 8px;
+
 }
 
 
@@ -193,7 +197,7 @@ body{
 }
 
 .food__metric{
-    font-size: 22px;
+    font-size: 1.2rem;
     color: var(--primary-color);
     font-weight: bold;
 }
@@ -226,6 +230,6 @@ body{
 }
 
 .button__addToDiet{
-    background-color: green;
+    background-color: var(--secundary-green);
 }
 

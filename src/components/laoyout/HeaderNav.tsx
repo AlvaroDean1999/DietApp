@@ -10,10 +10,7 @@ const HeaderNav = () => {
                 <NavLink className={({isActive}) => isActive ? "header__linkA" : "header__link"} to="Inicio"> Inicio </NavLink>
             </li>
             <li>
-                <NavLink className={({isActive}) => isActive ? "header__linkA" : "header__link"} to="Alimentos"> Crea Tu Dieta </NavLink>
-            </li>
-            <li>
-                <NavLink className={({isActive}) => isActive ? "header__linkA" : "header__link"} to="Blog"> Blog </NavLink>
+                <NavLink className={({isActive}) => isActive ? "header__linkA" : "header__link"} to="Recetas"> Recetas </NavLink>
             </li>
             <li>
                 <NavLink className={({isActive}) => isActive ? "header__linkA" : "header__link"} to="Dieta"> Dieta </NavLink>
