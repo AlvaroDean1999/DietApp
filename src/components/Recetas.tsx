@@ -3,6 +3,16 @@ import { alimentos } from "../data/alimentos";
 import { useState } from "react";
 
 const Recetas = () => {
+  interface Alimento {
+    id: number;
+    nombre: string;
+    categoria: string;
+    proteinas: number;
+    grasas: number;
+    carbohidratos: number;
+    calorias: number;
+  }
+  
   const [filterFood, setFilterFood] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -35,6 +45,22 @@ const Recetas = () => {
   const handlePreviousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1); // Decrementa la página
+    }
+  };
+
+  const handleAddToDiet = (receta: Alimento) => {
+    // 1. Obtener recetas previas del Local Storage
+    const storedRecipes = localStorage.getItem("recetas");
+
+    // 2. Convertir a array (si no hay nada, inicializar como vacío)
+    const recetasGuardadas: Alimento[] = storedRecipes ? JSON.parse(storedRecipes) : [];
+
+    // 3. Verificar si la receta ya está almacenada para evitar duplicados
+    if (!recetasGuardadas.some((item) => item.id === receta.id)) {
+      recetasGuardadas.push(receta); // Agregar la nueva receta
+      localStorage.setItem("recetas", JSON.stringify(recetasGuardadas)); // Guardar en Local Storage
+    } else {
+      alert("Esta receta ya está en la lista.");
     }
   };
 
@@ -85,7 +111,12 @@ const Recetas = () => {
               <Link to={alimentos.nombre}>
                 <button className="button__viewMore food__button">Detalles</button>
               </Link>
-              <button className="button__addToDiet food__button">Añadir</button>
+              <button
+                className="button__addToDiet food__button"
+                onClick={() => handleAddToDiet(alimentos)}
+              >
+                Añadir
+              </button>
             </div>
           </article>
         ))}

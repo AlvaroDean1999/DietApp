@@ -17,7 +17,7 @@ const Rutas = () => {
                     <Route path="/inicio" element={<Inicio />}></Route>
                     <Route path="/recetas" element={<Recetas />}></Route>
                     <Route path="/dieta" element={<Dieta />}></Route>
-                    <Route path="/alimentos/:nombre" element={<Alimento />}></Route>
+                    <Route path="/recetas/:nombre" element={<Alimento />}></Route>
                     <Route path="*" element={<h1> Error 404 </h1>}></Route>
                 </Routes>
             </section>
