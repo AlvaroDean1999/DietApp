@@ -1,12 +1,11 @@
-:root{
-    --primary-color: #2e4c21;
-    --secundary-color: #dde7e1; 
-    --secundary-green:#45d732; 
-    --grey: #D5E6CF; 
-    --black: #333;
-    --shadow: 2px 4px 6px rgba(0,0, 0, 0.1); 
-    --border-radius: 16px; 
+:root {
+    --primary-color: #ff6347;
+    --secundary-green: #45d732;
+    --black: #000000;
+    --shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 16px;
     --white: #eeeded;
+    --secundary-black: #0e0e0e; 
 }
 
 
@@ -21,11 +20,11 @@
 .diet__section{
     display: flex;
     flex-direction: row;
-    gap: 10%; 
+    justify-content: space-evenly;
 }
 
 .diet__recipes{
-    width: 65%;
+    min-width: 65%;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -35,8 +34,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    border: 1px solid var(--white);
     border-radius: var(--border-radius);
+    background-color: var(--secundary-black);    
     padding: 15px;
     box-sizing: border-box;
     align-items: center;
@@ -52,6 +51,10 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding: 50px;
+    border-radius: var(--border-radius);
+    background-color: var(--secundary-black); 
+    color: var(--white);
 }
 
 .item__totalResult{
@@ -62,4 +65,33 @@
     color: var(--primary-color);
     font-size: 18px;
     font-weight: 700px;
+}
+
+.diet__recipesData{
+    display: flex;
+    flex-direction: column;
+    gap: 6px; 
+    align-items: center;
+}
+
+.diet__recipesData p{
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--white)
+}
+
+.diet__recipesData h4{
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.diet__recipesDelete{
+    padding: 10px 20px;
+    background-color:  var(--primary-color); 
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-left: 20px; 
 }

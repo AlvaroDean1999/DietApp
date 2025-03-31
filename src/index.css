@@ -1,11 +1,9 @@
-:root{
-    --primary-color: #2e4c21;
-    --secundary-green: #4bc318; 
-    --secundary-color: #dde7e1; 
-    --grey: #D5E6CF; 
-    --black: #333;
-    --shadow: 2px 4px 6px rgba(0,0, 0, 0.1); 
-    --border-radius: 16px; 
+:root {
+    --primary-color: #ff6347;
+    --secundary-green: #45d732;
+    --black: #000000;
+    --shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 16px;
     --white: #eeeded;
 }
 
@@ -17,18 +15,14 @@
 }
 
 body{
-    background-color: var(--secundary-color);
-    font-family: 'Roboto', sans-serif;
-}
-
-.layout {
-    width: 85%;
-    margin: 0 auto;
+    background-color: var(--black);
+    font-family: "Montserrat", sans-serif;
 }
 
 .header{
+    padding: 10px 40px;
+    background-color: black;
     height: 12vh;
-    border-bottom: 1px solid var(--black);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -47,12 +41,16 @@ body{
     list-style: none;
 }
 
+.header__logo{
+    color: var(--primary-color);
+}
 
 .header__link{
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 
@@ -61,7 +59,7 @@ body{
 }
 
 .header__linkA{
-    color: var(--secundary-green); 
+    color: var(--primary-color); 
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -74,7 +72,7 @@ body{
 .footer{
     width: 100%;
     height: 8vh;
-    background-color: #f5f5f5;
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,6 +83,7 @@ body{
     font-size: 18px;
     font-weight: 400;
     font-style: italic;
+    color: var(--white);
 }
 
 
@@ -97,6 +96,7 @@ body{
     font-size: 30px;
     padding: 30px;
     letter-spacing: 1.2px;
+    color: var(--primary-color);
 }
 
 
@@ -107,19 +107,29 @@ body{
     margin-left: 10%;
     align-items: center;
     justify-content: center;
+    gap: 20px; 
 }
 
 .food__input{
     padding: 10px 20px;
-    box-shadow: var(--shadow);
-    
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-color);
+    color: var(--white); 
 }
 
 .food__select{
     padding: 10px 20px;
-    box-shadow: var(--shadow);
-    border-left: none;
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-color);
+    color: var(--white);
+    opacity: 0.8;
+}
 
+
+.food__select option{
+    color: var(--black);
 }
 
 
@@ -143,26 +153,30 @@ body{
     height: 400px;
     box-shadow: var(--shadow);
     border-radius: var(--border-radius);
-    background-color: var(--white);
+    background-color: var(--secundary-black); 
 }
 
-
-.food__img{
-    width: 160px;
-    height: 160px;
-    box-shadow: var(--shadow);
+.food__containerImg{
+    width: 220px;
+    height: 240px;
+    overflow: hidden;
     border-radius: var(--border-radius);
 }
 
+.food__img{
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
 .food__img:hover{
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
 .food__category{
     margin-top: 10px;
     font-size: 1rem; 
     padding: 4px 12px;
-    color: var(--primary-color);
+    color: var(--white)
 }
 
 .food__name{
@@ -194,6 +208,7 @@ body{
 
 .food__text{
     font-size: 16px;
+    color: white;
 }
 
 .food__metric{
@@ -218,7 +233,9 @@ body{
     border-radius: var(--border-radius);
     cursor: pointer;
     color: white;
-    border: none;
+    font-size: 16px;
+    letter-spacing: 1.1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .food__button:hover{
@@ -226,10 +243,41 @@ body{
 }
 
 .button__viewMore{
-    background-color: var(--primary-color);
+    background-color: transparent; 
+    border: 1px solid var(--primary-color);
 }
 
 .button__addToDiet{
-    background-color: var(--secundary-green);
+    background-color: transparent; 
+    border: 1px solid var(--secundary-green);
+}
+
+.food__pagination{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.food__pagination span{
+    color: var(--white);
+} 
+
+.food__pagination button{
+    padding: 8px 16px; 
+    border: none; 
+    background-color: var(--secundary-black); 
+    color: var(--white);
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+    font-size: 16px;
+    letter-spacing: 1.2;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.food__pagination button:hover{
+    color: var(--primary-color);
 }
 

@@ -3,14 +3,11 @@ const Inicio = () => {
     <div className="home">
       <section className="home__landing">
         <div className="homeLanding__left">
-          <h1 className="homeLanding__title"> Con <span> TuDieta </span> crea tu propia rutina de alimentación </h1>
+          <h1 className="homeLanding__title"> Para los que creen que <span>comer bien </span>también es un <span>placer. </span></h1>
           <h3 className="homeLanding__subtitle">Descubre las mejores recetas y crea tu propia deta completamente adaptada a ti </h3>
 
           <a href="" className="homeLanding__button">Descubre nuestras recetas</a>
 
-        </div>
-        <div className="homeLanding__right">
-          <img src="" alt="" className="homeLanding__img" />
         </div>
       </section>
 

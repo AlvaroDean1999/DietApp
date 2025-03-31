@@ -31,6 +31,15 @@ const Dieta = () => {
     { calorias: 0, proteinas: 0, grasas: 0, carbohidratos: 0 }
   );
 
+  const deleteRecipe = (id: number) => {
+    const storedRecipes: Alimento[] = JSON.parse(localStorage.getItem("recetas") || "[]");
+    const updatedRecipes = storedRecipes.filter((receta) => receta.id !== id);
+  
+    localStorage.setItem("recetas", JSON.stringify(updatedRecipes));
+    setRecetasGuardadas(updatedRecipes); // ✅ Ahora actualiza correctamente el estado
+  };
+
+
   return (
     <main>
       <h2 className="diet__title">Mi Dieta</h2>
@@ -38,52 +47,55 @@ const Dieta = () => {
         {recetasGuardadas.length === 0 ? (
           <p className="diet__disclaimer">No has añadido ninguna receta.</p>
         ) : (
+          <>
           <div className="diet__recipes">
             {recetasGuardadas.map((receta) => (
               <article className="diet__recipesItem">
                 <img src={"img/" + receta.id + ".jpg"} alt="" className="diet__recipesImg"/>
-                <div>
-                  <p>Nombre</p>
+                <div className="diet__recipesData">
                   <h4>
                     {receta.nombre}
                   </h4>
                 </div>
-                <div>
+                <div className="diet__recipesData">
                   <p>Proteinas</p>
                   <h4>
                     {receta.grasas}
                   </h4>
                 </div>
-                <div>
+                <div className="diet__recipesData">
                   <p>Grasas</p>
                   <h4>
                     {receta.grasas}
                   </h4>
                 </div>
-                <div>
+                <div className="diet__recipesData">
                   <p>Carbohidratos</p>
                   <h4>
                     {receta.carbohidratos}
                   </h4>
                 </div>
-                <div>
+                <div className="diet__recipesData">
                   <p>Kcal</p>
                   <h4>
                     {receta.calorias}
                   </h4>
                 </div>
+                <div className="diet__recipesData">
+                <button onClick={() => deleteRecipe(receta.id)} className="diet__recipesDelete">Eliminar</button>
+                </div>
               </article>
             ))}
           </div>
-        )}
-
-        <div className="diet__totalResult">
+          <div className="diet__totalResult">
           <h3>Total: </h3>
           <p className="item__totalResult">Calorías: <span> {totalStats.calorias} </span> kcal</p>
           <p className="item__totalResult">Proteínas: <span> {totalStats.proteinas} </span>g</p>
           <p className="item__totalResult">Grasas: <span> {totalStats.grasas} </span>g</p>
           <p className="item__totalResult">Carbohidratos: <span> {totalStats.carbohidratos} </span>g</p>
         </div>
+        </>
+        )}
       </section>
     </main>
   );

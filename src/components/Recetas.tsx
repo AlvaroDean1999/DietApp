@@ -88,7 +88,9 @@ const Recetas = () => {
       <section className="food__section">
         {currentRecipes.map((alimentos) => (
           <article key={alimentos.id} className="food__item">
+            <div className="food__containerImg">
             <img src={"img/" + alimentos.id + ".jpg"} alt={alimentos.nombre} className="food__img" />
+            </div>
             <span className="food__category">{alimentos.categoria}</span>
             <h4 className="food__name">{alimentos.nombre}</h4>
 
